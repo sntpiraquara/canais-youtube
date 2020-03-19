@@ -1,0 +1,17 @@
+version: '2'
+
+volumes:
+  canais-db-data:
+    driver: local
+
+services:
+  db:
+    image: mariadb:10.4
+    container_name: canais-db
+    volumes:
+      - canais-db-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=canais
+      - MYSQL_DATABASE=canais
