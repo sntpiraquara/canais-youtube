@@ -8,4 +8,9 @@ class HomeController extends Controller
 	{
 		return view('app');
 	}
+
+	public function cadastro()
+	{
+		return view('app', ['cadastro' => true]);
+	}
 }

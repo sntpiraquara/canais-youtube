@@ -37,6 +37,9 @@
 	  </div>
 	</footer>
 
+	@if(isset($cadastro))
+    <script>window.cadastro = true;</script>
+    @endif
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

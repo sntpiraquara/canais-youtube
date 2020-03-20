@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@form')->name('home');
+Route::get('/cadastro', 'HomeController@cadastro')->name('cadastro');
 Route::post('/channels', 'ChannelsController@create')->name('channels.create');
