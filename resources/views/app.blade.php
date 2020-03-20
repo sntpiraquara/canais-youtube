@@ -29,6 +29,14 @@
     	<app></app>
     </div>
 
+    <footer class="footer">
+	  <div class="content has-text-centered">
+	    <p>
+	      Feito por Neri Junior (neri[at]nerijunior.com) com código aberto no <a href="https://github.com/sntpiraquara/canais-youtube">Github</a>
+	    </p>
+	  </div>
+	</footer>
+
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
