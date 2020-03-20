@@ -178,8 +178,8 @@ export default {
 					</thead>
 
 					<tbody>
-						<tr v-for="channel in channels" :key="channel.id">
-							<td>{{ channel.id }}</td>
+						<tr v-for="(channel, index) in channels" :key="channel.id">
+							<td>{{ index + 1 }}</td>
 							<td>{{ channel.state }}</td>
 							<td>{{ channel.city }}</td>
 							<td>
