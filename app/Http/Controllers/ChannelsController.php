@@ -36,6 +36,8 @@ class ChannelsController extends Controller
             'link'  => 'required|url',
         ]);
 
+        $link = $this->cleanUrl($request->link);
+
         $channel = Channel::select('id')
             ->where('youtube_url', $request->link)
             ->first();
@@ -47,11 +49,20 @@ class ChannelsController extends Controller
         $channel = Channel::create([
             'state_id'    => $request->state,
             'city_id'     => $request->city,
-            'youtube_url' => $request->link,
+            'youtube_url' => $link,
         ]);
 
         Cache::forget('channels');
 
         return redirect('/')->with('success', true);
+    }
+
+    private function cleanUrl($url)
+    {
+        if (strpos('?', $url) !== -1) {
+            $url = explode('?', $url)[0];
+        }
+
+        return $url;
     }
 }
