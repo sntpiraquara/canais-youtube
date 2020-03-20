@@ -9,23 +9,23 @@ use Illuminate\Support\Facades\Cache;
 class ChannelsController extends Controller
 {
     function list() {
-    	$key = 'channels';
-    	return Cache::rememberForever($key, function(){
-    		$channels = Channel::all();
-	        $channels->load([
-	            'state' => function ($query) {$query->select('id', 'name');},
-	            'city'  => function ($query) {$query->select('id', 'name');},
-	        ]);
+        $key = 'channels';
+        return Cache::rememberForever($key, function () {
+            $channels = Channel::all();
+            $channels->load([
+                'state' => function ($query) {$query->select('id', 'name');},
+                'city'  => function ($query) {$query->select('id', 'name');},
+            ]);
 
-	        return $channels->map(function ($channel) {
-	            return [
-	                'id'          => $channel->id,
-	                'state'       => $channel->state->name,
-	                'city'        => $channel->city->name,
-	                'youtube_url' => $channel->youtube_url,
-	            ];
-	        });
-    	});
+            return $channels->map(function ($channel) {
+                return [
+                    'id'          => $channel->id,
+                    'state'       => $channel->state->name,
+                    'city'        => $channel->city->name,
+                    'youtube_url' => $channel->youtube_url,
+                ];
+            });
+        });
     }
 
     public function create(Request $request)
