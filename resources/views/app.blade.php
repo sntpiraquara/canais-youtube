@@ -7,7 +7,7 @@
 
     <title>Canais SNT - 2020</title>
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
 </head>
 <body>
     <div id="app">
@@ -29,6 +29,6 @@
     	<app></app>
     </div>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ secure_asset('js/app.js') }}"></script>
 </body>
 </html>
