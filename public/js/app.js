@@ -23166,285 +23166,368 @@ var render = function() {
                         domProps: { value: _vm.csrf_token }
                       }),
                       _vm._v(" "),
-                      _c("ValidationProvider", {
-                        attrs: { name: "Estado", rules: "required" },
-                        scopedSlots: _vm._u(
+                      _c("div", { staticClass: "columns" }, [
+                        _c(
+                          "div",
+                          { staticClass: "column" },
                           [
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                var errors = ref.errors
-                                return [
-                                  _c("div", { staticClass: "field" }, [
-                                    _c("div", { staticClass: "control" }, [
-                                      _c(
-                                        "label",
-                                        {
-                                          staticClass: "label",
-                                          attrs: { for: "" }
-                                        },
-                                        [_vm._v("Estado")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass: "select",
-                                          class: {
-                                            "is-loading": _vm.loading.states
-                                          }
-                                        },
-                                        [
+                            _c("ValidationProvider", {
+                              attrs: { name: "Estado", rules: "required" },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function(ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c("div", { staticClass: "field" }, [
                                           _c(
-                                            "select",
-                                            {
-                                              directives: [
-                                                {
-                                                  name: "model",
-                                                  rawName: "v-model",
-                                                  value: _vm.form.state,
-                                                  expression: "form.state"
-                                                }
-                                              ],
-                                              attrs: { name: "state" },
-                                              on: {
-                                                change: [
-                                                  function($event) {
-                                                    var $$selectedVal = Array.prototype.filter
-                                                      .call(
-                                                        $event.target.options,
-                                                        function(o) {
-                                                          return o.selected
-                                                        }
-                                                      )
-                                                      .map(function(o) {
-                                                        var val =
-                                                          "_value" in o
-                                                            ? o._value
-                                                            : o.value
-                                                        return val
-                                                      })
-                                                    _vm.$set(
-                                                      _vm.form,
-                                                      "state",
-                                                      $event.target.multiple
-                                                        ? $$selectedVal
-                                                        : $$selectedVal[0]
-                                                    )
-                                                  },
-                                                  _vm.populateCities
-                                                ]
-                                              }
-                                            },
+                                            "div",
+                                            { staticClass: "control" },
                                             [
                                               _c(
-                                                "option",
-                                                { attrs: { value: "" } },
+                                                "label",
+                                                {
+                                                  staticClass: "label",
+                                                  attrs: { for: "" }
+                                                },
                                                 [_vm._v("Estado")]
                                               ),
                                               _vm._v(" "),
-                                              _vm._l(_vm.states, function(
-                                                state
-                                              ) {
-                                                return _c(
-                                                  "option",
-                                                  {
-                                                    key: state.id,
-                                                    domProps: {
-                                                      value: state.id
-                                                    }
-                                                  },
-                                                  [_vm._v(_vm._s(state.name))]
-                                                )
-                                              })
-                                            ],
-                                            2
-                                          )
-                                        ]
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", { staticClass: "help is-danger" }, [
-                                      _vm._v(_vm._s(errors[0]))
-                                    ])
-                                  ])
-                                ]
-                              }
-                            }
-                          ],
-                          null,
-                          true
-                        )
-                      }),
-                      _vm._v(" "),
-                      _c("ValidationProvider", {
-                        attrs: { name: "Cidade", rules: "required" },
-                        scopedSlots: _vm._u(
-                          [
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                var errors = ref.errors
-                                return [
-                                  _c("div", { staticClass: "field" }, [
-                                    _c("div", { staticClass: "control" }, [
-                                      _c(
-                                        "label",
-                                        {
-                                          staticClass: "label",
-                                          attrs: { for: "" }
-                                        },
-                                        [_vm._v("Cidade")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass: "select",
-                                          class: {
-                                            "is-loading": _vm.loading.cities
-                                          },
-                                          attrs: {
-                                            disabled: !_vm.loaded.cities
-                                          }
-                                        },
-                                        [
-                                          _c(
-                                            "select",
-                                            {
-                                              directives: [
+                                              _c(
+                                                "div",
                                                 {
-                                                  name: "model",
-                                                  rawName: "v-model",
-                                                  value: _vm.form.city,
-                                                  expression: "form.city"
-                                                }
-                                              ],
-                                              attrs: { name: "city" },
-                                              on: {
-                                                change: function($event) {
-                                                  var $$selectedVal = Array.prototype.filter
-                                                    .call(
-                                                      $event.target.options,
-                                                      function(o) {
-                                                        return o.selected
+                                                  staticClass:
+                                                    "select is-fullwidth",
+                                                  class: {
+                                                    "is-loading":
+                                                      _vm.loading.states
+                                                  }
+                                                },
+                                                [
+                                                  _c(
+                                                    "select",
+                                                    {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value: _vm.form.state,
+                                                          expression:
+                                                            "form.state"
+                                                        }
+                                                      ],
+                                                      attrs: { name: "state" },
+                                                      on: {
+                                                        change: [
+                                                          function($event) {
+                                                            var $$selectedVal = Array.prototype.filter
+                                                              .call(
+                                                                $event.target
+                                                                  .options,
+                                                                function(o) {
+                                                                  return o.selected
+                                                                }
+                                                              )
+                                                              .map(function(o) {
+                                                                var val =
+                                                                  "_value" in o
+                                                                    ? o._value
+                                                                    : o.value
+                                                                return val
+                                                              })
+                                                            _vm.$set(
+                                                              _vm.form,
+                                                              "state",
+                                                              $event.target
+                                                                .multiple
+                                                                ? $$selectedVal
+                                                                : $$selectedVal[0]
+                                                            )
+                                                          },
+                                                          _vm.populateCities
+                                                        ]
                                                       }
-                                                    )
-                                                    .map(function(o) {
-                                                      var val =
-                                                        "_value" in o
-                                                          ? o._value
-                                                          : o.value
-                                                      return val
-                                                    })
-                                                  _vm.$set(
-                                                    _vm.form,
-                                                    "city",
-                                                    $event.target.multiple
-                                                      ? $$selectedVal
-                                                      : $$selectedVal[0]
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "option",
+                                                        {
+                                                          attrs: { value: "" }
+                                                        },
+                                                        [_vm._v("Estado")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _vm._l(
+                                                        _vm.states,
+                                                        function(state) {
+                                                          return _c(
+                                                            "option",
+                                                            {
+                                                              key: state.id,
+                                                              domProps: {
+                                                                value: state.id
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                _vm._s(
+                                                                  state.name
+                                                                )
+                                                              )
+                                                            ]
+                                                          )
+                                                        }
+                                                      )
+                                                    ],
+                                                    2
                                                   )
-                                                }
-                                              }
-                                            },
+                                                ]
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "p",
+                                            { staticClass: "help is-danger" },
+                                            [_vm._v(_vm._s(errors[0]))]
+                                          )
+                                        ])
+                                      ]
+                                    }
+                                  }
+                                ],
+                                null,
+                                true
+                              )
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "column" },
+                          [
+                            _c("ValidationProvider", {
+                              attrs: { name: "Cidade", rules: "required" },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function(ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c("div", { staticClass: "field" }, [
+                                          _c(
+                                            "div",
+                                            { staticClass: "control" },
                                             [
                                               _c(
-                                                "option",
-                                                { attrs: { value: "" } },
+                                                "label",
+                                                {
+                                                  staticClass: "label",
+                                                  attrs: { for: "" }
+                                                },
                                                 [_vm._v("Cidade")]
                                               ),
                                               _vm._v(" "),
-                                              _vm._l(_vm.cities, function(
-                                                city
-                                              ) {
-                                                return _c(
-                                                  "option",
-                                                  {
-                                                    key: city.id,
-                                                    domProps: { value: city.id }
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "select is-fullwidth",
+                                                  class: {
+                                                    "is-loading":
+                                                      _vm.loading.cities
                                                   },
-                                                  [_vm._v(_vm._s(city.name))]
-                                                )
-                                              })
-                                            ],
-                                            2
+                                                  attrs: {
+                                                    disabled: !_vm.loaded.cities
+                                                  }
+                                                },
+                                                [
+                                                  _c(
+                                                    "select",
+                                                    {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value: _vm.form.city,
+                                                          expression:
+                                                            "form.city"
+                                                        }
+                                                      ],
+                                                      attrs: { name: "city" },
+                                                      on: {
+                                                        change: function(
+                                                          $event
+                                                        ) {
+                                                          var $$selectedVal = Array.prototype.filter
+                                                            .call(
+                                                              $event.target
+                                                                .options,
+                                                              function(o) {
+                                                                return o.selected
+                                                              }
+                                                            )
+                                                            .map(function(o) {
+                                                              var val =
+                                                                "_value" in o
+                                                                  ? o._value
+                                                                  : o.value
+                                                              return val
+                                                            })
+                                                          _vm.$set(
+                                                            _vm.form,
+                                                            "city",
+                                                            $event.target
+                                                              .multiple
+                                                              ? $$selectedVal
+                                                              : $$selectedVal[0]
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "option",
+                                                        {
+                                                          attrs: { value: "" }
+                                                        },
+                                                        [_vm._v("Cidade")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _vm._l(
+                                                        _vm.cities,
+                                                        function(city) {
+                                                          return _c(
+                                                            "option",
+                                                            {
+                                                              key: city.id,
+                                                              domProps: {
+                                                                value: city.id
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                _vm._s(
+                                                                  city.name
+                                                                )
+                                                              )
+                                                            ]
+                                                          )
+                                                        }
+                                                      )
+                                                    ],
+                                                    2
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "p",
+                                            { staticClass: "help is-danger" },
+                                            [_vm._v(_vm._s(errors[0]))]
                                           )
-                                        ]
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", { staticClass: "help is-danger" }, [
-                                      _vm._v(_vm._s(errors[0]))
-                                    ])
-                                  ])
-                                ]
-                              }
-                            }
+                                        ])
+                                      ]
+                                    }
+                                  }
+                                ],
+                                null,
+                                true
+                              )
+                            })
                           ],
-                          null,
-                          true
-                        )
-                      }),
-                      _vm._v(" "),
-                      _c("ValidationProvider", {
-                        attrs: { name: "Link do canal", rules: "required|url" },
-                        scopedSlots: _vm._u(
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "column" },
                           [
-                            {
-                              key: "default",
-                              fn: function(ref) {
-                                var errors = ref.errors
-                                return [
-                                  _c("div", { staticClass: "field" }, [
-                                    _c("div", { staticClass: "control" }, [
-                                      _c(
-                                        "label",
-                                        {
-                                          staticClass: "label",
-                                          attrs: { for: "" }
-                                        },
-                                        [_vm._v("Link do canal")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.link,
-                                            expression: "form.link"
-                                          }
-                                        ],
-                                        staticClass: "input",
-                                        attrs: { type: "text", name: "link" },
-                                        domProps: { value: _vm.form.link },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
-                                            }
-                                            _vm.$set(
-                                              _vm.form,
-                                              "link",
-                                              $event.target.value
-                                            )
-                                          }
-                                        }
-                                      })
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", { staticClass: "help is-danger" }, [
-                                      _vm._v(_vm._s(errors[0]))
-                                    ])
-                                  ])
-                                ]
-                              }
-                            }
+                            _c("ValidationProvider", {
+                              attrs: {
+                                name: "Link do canal",
+                                rules: "required|url"
+                              },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function(ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c("div", { staticClass: "field" }, [
+                                          _c(
+                                            "div",
+                                            { staticClass: "control" },
+                                            [
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticClass: "label",
+                                                  attrs: { for: "" }
+                                                },
+                                                [_vm._v("Link do canal")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("input", {
+                                                directives: [
+                                                  {
+                                                    name: "model",
+                                                    rawName: "v-model",
+                                                    value: _vm.form.link,
+                                                    expression: "form.link"
+                                                  }
+                                                ],
+                                                staticClass: "input",
+                                                attrs: {
+                                                  type: "text",
+                                                  name: "link"
+                                                },
+                                                domProps: {
+                                                  value: _vm.form.link
+                                                },
+                                                on: {
+                                                  input: function($event) {
+                                                    if (
+                                                      $event.target.composing
+                                                    ) {
+                                                      return
+                                                    }
+                                                    _vm.$set(
+                                                      _vm.form,
+                                                      "link",
+                                                      $event.target.value
+                                                    )
+                                                  }
+                                                }
+                                              })
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "p",
+                                            { staticClass: "help is-danger" },
+                                            [_vm._v(_vm._s(errors[0]))]
+                                          )
+                                        ])
+                                      ]
+                                    }
+                                  }
+                                ],
+                                null,
+                                true
+                              )
+                            })
                           ],
-                          null,
-                          true
+                          1
                         )
-                      }),
+                      ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "field" }, [
                         _c(
@@ -23456,8 +23539,7 @@ var render = function() {
                           [_vm._v("Cadastrar")]
                         )
                       ])
-                    ],
-                    1
+                    ]
                   )
                 ]
               }

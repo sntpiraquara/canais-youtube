@@ -18,7 +18,7 @@ class CreateChannelsTable extends Migration
 
             $table->unsignedBigInteger("state_id");
             $table->unsignedBigInteger("city_id");
-            $table->string('youtube_url');
+            $table->string('youtube_url')->unique();
 
             $table->foreign('state_id')->references('id')->on('states');
             $table->foreign('city_id')->references('id')->on('cities');

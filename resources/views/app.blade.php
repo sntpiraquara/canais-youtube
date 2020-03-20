@@ -14,7 +14,15 @@
 
 		<div class="container">
 			@if(session('success'))
-			<div class="notification is-success">Link criado!</div>
+			<div class="section">
+				<div class="notification is-success">Link criado!</div>
+			</div>
+			@endif
+
+			@if(session('duplicated'))
+			<div class="section">
+				<div class="notification is-danger">Este link já foi cadastrado!</div>
+			</div>
 			@endif
 		</div>
 
