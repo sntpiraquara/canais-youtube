@@ -11,6 +11,6 @@ class HomeController extends Controller
 
 	public function cadastro()
 	{
-		return view('app', ['cadastro' => true]);
+		return view('app');
 	}
 }
